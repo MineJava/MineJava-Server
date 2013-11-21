@@ -13,7 +13,7 @@ class MineJavaServer implements Runnable{
 		port="19132"
 		this.startServer(ip, port);
 		//fixed
-                logger.info("Starting server on "+ip+":"+port+"");// I do not know how to do that in java yet -ZacHack
+                logger.info("Starting server on "+ip+":"+port+"");// I do not know how to do that in java yet -ZacHack fixed -jython
 	}
 	
 	
