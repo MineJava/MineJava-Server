@@ -9,7 +9,7 @@ class MineJavaServer implements Runnable{
 	public static void run(){
 		//Main method
 		//This function is called when the thread is started
-		ip="0.0.0.0"
+		ip="localhost"
 		port="19132"
 		this.startServer(ip, port);
 		//fixed
