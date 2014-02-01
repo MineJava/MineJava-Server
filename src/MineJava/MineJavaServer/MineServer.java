@@ -33,7 +33,7 @@ class MineServer implements Runnable{
 		}
 	}
 	public MineServer(Bundle args){
-		ip=InetAddress.getAddress(args.getString("networking.ip", "0.0.0.0"));
+		ip=InetAddress.getByName(args.getString("networking.ip", "0.0.0.0"));
 		port=args.getInt("networking.port", 19132);
 		name=args.getString("server.name", "MineJava server");
 		
