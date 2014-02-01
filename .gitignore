@@ -1,0 +1,6 @@
+####################
+####Eclipse gens####
+####################
+.classpath
+.project
+.settings/*
