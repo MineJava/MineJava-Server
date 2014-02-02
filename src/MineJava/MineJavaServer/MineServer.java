@@ -1,4 +1,4 @@
-package MineJava.MineJavaServer.MinServer;
+package MineJava.MineJavaServer;
 import java.util.*;
 import java.net.*;
 

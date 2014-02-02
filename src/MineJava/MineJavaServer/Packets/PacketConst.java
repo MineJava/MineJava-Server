@@ -1,9 +1,7 @@
-package MineJava.MineJavaServer.MineServer.Packets;
+package MineJava.MineJavaServer.Packets;
 
-import java.net.*;
-import java.nio.*;
 
-class MCPacket{
+public class PacketConst{
 
 	//// packet values
 	public final static int PING=0x0;
