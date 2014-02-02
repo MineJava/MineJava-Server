@@ -1,11 +1,13 @@
 package MineJava.MineJavaServer;
-import java.util.*;
-import java.net.*;
 
-import MineJava.Utils.*;
-import MineJava.Utils.android.*;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.logging.Logger;
+
+import MineJava.Utils.android.os.Bundle;
 
 class MineServer implements Runnable{
+	public final static String NAME="MineServer";
 	//////////////
 	//properties//
 	//////////////
@@ -16,13 +18,15 @@ class MineServer implements Runnable{
 	//debug//
 	/////////
 	long lastTick,startMilli;
+	Logger logger;
 	////////
 	//info//
 	////////
 	public boolean isStarted=false, isStopped=false;
 	public void run(){
 		//Main thread startup
-		//TODO: Get sockets, Get logger init
+		//TODO: Get sockets
+		logger=Logger.getLogger(NAME);
 		startMilli=System.currentTimeMillis();
 		isStarted=true;
 		lastTick=startMilli;
@@ -31,18 +35,21 @@ class MineServer implements Runnable{
 			try {
 				Thread.sleep(50);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
-			} // 1/20 second - one tick
+			}
 			if (System.currentTimeMillis() - lastTick > 100)
-				//what to do when server is too overloaded
+				onOverloaded();
 			lastTick=System.currentTimeMillis();
 		}
 	}
-	public MineServer(Bundle args){
-		ip=InetAddress.getByName(args.getString("networking.ip", "0.0.0.0"));
-		port=args.getInt("networking.port", 19132);
-		name=args.getString("server.name", "MineJava server");
+	protected void onOverloaded() {
+		// TODO Auto-generated method stub
+		
+	}
+	public MineServer(Bundle args) throws UnknownHostException{
+		ip=InetAddress.getByName(args.getString(MineJavaRunner.ARGS_IP, "0.0.0.0"));
+		port=args.getInt(MineJavaRunner.ARGS_PORT, 19132);
+		name=args.getString(MineJavaRunner.ARGS_NAME, "MineJava server");
 		
 	}
 	public boolean isOnline(){
