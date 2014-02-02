@@ -1,4 +1,4 @@
-package MineJava.MineJavaServer;
+package MineJava.MineJavaServer.MineServer;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;

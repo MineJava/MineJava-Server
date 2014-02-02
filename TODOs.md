@@ -1,4 +1,4 @@
 TODOs
 ===
-* â˜… broadcasting service, creating sockets and handling packets
-* Bundle object finishing
+* þýþýbroadcasting service, creating sockets and handling packets
+* internal world handling
