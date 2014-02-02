@@ -1,9 +1,14 @@
-package MineJava.MineJavaServer.Utils.android;
+package MineJava.Utils.android;
 
 //
 
-public class Bundle extends Object
+public class Bundle extends Object{
 
-	// TODO add contents
+	private String[] strings;
+	private int[] ints;
+	
+	public Bundle(){
+		
+	}
 
 }

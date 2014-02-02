@@ -1,4 +1,4 @@
-package MineJava.MineJavaServer.MineServer;
+package MineJava.MineJavaServer.MinServer;
 
 
 

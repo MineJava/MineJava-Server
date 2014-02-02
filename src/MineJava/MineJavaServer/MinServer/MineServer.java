@@ -1,7 +1,9 @@
-package MineJava.MineJavaServer.MineServer;
+package MineJava.MineJavaServer.MinServer;
 import java.util.*;
 import java.net.*;
-import MineJava.MineJavaServer.Utils.*;
+
+import MineJava.Utils.*;
+import MineJava.Utils.android.*;
 
 class MineServer implements Runnable{
 	//////////////
@@ -13,7 +15,7 @@ class MineServer implements Runnable{
 	/////////
 	//debug//
 	/////////
-	long lastTick;
+	long lastTick,startMilli;
 	////////
 	//info//
 	////////
@@ -26,7 +28,12 @@ class MineServer implements Runnable{
 		lastTick=startMilli;
 		while(isOnline()){
 			tickEvent();
-			Thread.sleep(50); // 1/20 second - one tick
+			try {
+				Thread.sleep(50);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} // 1/20 second - one tick
 			if (System.currentTimeMillis() - lastTick > 100)
 				//what to do when server is too overloaded
 			lastTick=System.currentTimeMillis();
