@@ -1,4 +1,4 @@
-package MineJava.MineJavaServer.Packets;
+package MineJava.MineJavaServer.networking.packets;
 
 
 public class PacketConst{
