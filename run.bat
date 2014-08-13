@@ -1,1 +1,1 @@
-//Placeholder for windows start file
+REM Placeholder for windows start file
